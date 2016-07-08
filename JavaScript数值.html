@@ -1,0 +1,642 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在JavaScript中数值的构造函数是Number函数，最常用的方法是直接使用字面亮来生成一个数值，也可以使用Number函数生成一个数值包装对象。
+相关属性Number.MAX_VALUE返回JavaScript中能表示的最大值1.7976931348623157e+308。
+Number.MIN_VALUE返回JavaScript中能表示的最小值5e-324。
+NaN表示这个数值不是一个数值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数值">
+<meta property="og:url" content="http://yoursite.com/JavaScript数值.html">
+<meta property="og:site_name" content="XQ's Note">
+<meta property="og:description" content="在JavaScript中数值的构造函数是Number函数，最常用的方法是直接使用字面亮来生成一个数值，也可以使用Number函数生成一个数值包装对象。
+相关属性Number.MAX_VALUE返回JavaScript中能表示的最大值1.7976931348623157e+308。
+Number.MIN_VALUE返回JavaScript中能表示的最小值5e-324。
+NaN表示这个数值不是一个数值">
+<meta property="og:updated_time" content="2016-07-08T03:01:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript数值">
+<meta name="twitter:description" content="在JavaScript中数值的构造函数是Number函数，最常用的方法是直接使用字面亮来生成一个数值，也可以使用Number函数生成一个数值包装对象。
+相关属性Number.MAX_VALUE返回JavaScript中能表示的最大值1.7976931348623157e+308。
+Number.MIN_VALUE返回JavaScript中能表示的最小值5e-324。
+NaN表示这个数值不是一个数值">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/JavaScript数值.html"/>
+
+  <title> JavaScript数值 | XQ's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">XQ's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript数值
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-08T00:32:37+08:00" content="2016-07-08">
+              2016-07-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/JavaScript数值.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="JavaScript数值.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在JavaScript中数值的构造函数是<code>Number</code>函数，最常用的方法是直接使用字面亮来生成一个数值，也可以使用<code>Number</code>函数生成一个数值包装对象。</p>
+<h2 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h2><h3 id="Number-MAX-VALUE"><a href="#Number-MAX-VALUE" class="headerlink" title="Number.MAX_VALUE"></a>Number.MAX_VALUE</h3><p>返回JavaScript中能表示的最大值1.7976931348623157e+308。</p>
+<h3 id="Number-MIN-VALUE"><a href="#Number-MIN-VALUE" class="headerlink" title="Number.MIN_VALUE"></a>Number.MIN_VALUE</h3><p>返回JavaScript中能表示的最小值5e-324。</p>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>表示这个数值不是一个数值，<code>NaN</code>与自身不相等。</p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed"></a>toFixed</h3><p><code>toFixed</code>方法通过四舍五入将数值的小数位保留到指定的位数。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100.456</span>;</div><div class="line">num.toFixed(<span class="number">1</span>);<span class="comment">//100.5</span></div><div class="line">num.toFixed(<span class="number">0</span>);<span class="comment">//100</span></div></pre></td></tr></table></figure></p>
+<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h3><p><code>toString</code>方法返回数值的字符串形式，如果不传入参数则默认以10进制转换为字符串。</p>
+<p><strong>参数</strong><br>转换成字符串的基数，例如二进制、八进制、16进制等。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</div><div class="line">num.toString();<span class="comment">//'100'</span></div><div class="line">num.toString(<span class="number">2</span>);<span class="comment">//'1100100'</span></div><div class="line">num.toString(<span class="number">8</span>);<span class="comment">//'144'</span></div><div class="line">num.toString(<span class="number">16</span>);<span class="comment">//'64'</span></div></pre></td></tr></table></figure></p>
+<h2 id="全局方法"><a href="#全局方法" class="headerlink" title="全局方法"></a>全局方法</h2><h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h3><p><code>isNaN</code>方法用来判断指定数值是否为<code>NaN</code>。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'123a'</span>;</div><div class="line"><span class="built_in">isNaN</span>(<span class="built_in">Number</span>(str));<span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h3><p><code>parseInt</code>方法将字符串以指定的进制转换成10进制整数。</p>
+<p><strong>参数一</strong><br>指定需要转换成整数的字符串</p>
+<p><strong>参数二</strong><br>指定字符串的进制，默认为10进制。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'10'</span>;</div><div class="line"><span class="built_in">parseInt</span>(str);<span class="comment">//10</span></div><div class="line"><span class="built_in">parseInt</span>(str,<span class="number">2</span>);<span class="comment">//2</span></div><div class="line"></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'100.99'</span>);<span class="comment">//100</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'a100'</span>);<span class="comment">//NaN</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'100a'</span>);<span class="comment">//100</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'.100'</span>);<span class="comment">//NaN</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'100.'</span>);<span class="comment">//100</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'100a100'</span>);<span class="comment">//100</span></div></pre></td></tr></table></figure></p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat"></a>parseFloat</h3><p><code>parseFloat</code>方法将字符串转换成浮点数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'100.99'</span>);<span class="comment">//100.99</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'a100'</span>);<span class="comment">//NaN</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'100.1a'</span>);<span class="comment">//100.1</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'.100'</span>);<span class="comment">//0.1</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'100.'</span>);<span class="comment">//100</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">'100.aa1'</span>)<span class="comment">//100</span></div></pre></td></tr></table></figure></p>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs"></a>Math.abs</h3><p><code>Math.abs</code>方法返回指定数值的绝对值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.abs(<span class="number">-1</span>);<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil"></a>Math.ceil</h3><p><code>Math.ceil</code>方法返回一个向上取整的数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.ceil(<span class="number">1.0001</span>);<span class="comment">//2</span></div><div class="line"><span class="built_in">Math</span>.ceil(<span class="number">1</span>);<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor"></a>Math.floor</h3><p><code>Math.floor</code>方法返回一个向下取整的数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.floor(<span class="number">1.99999</span>);<span class="comment">//1</span></div><div class="line"><span class="built_in">Math</span>.floor(<span class="number">2</span>);<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max"></a>Math.max</h3><p><code>Math.max</code>方法返回一组数值中最大的数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>);<span class="comment">//5</span></div><div class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>]);<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min"></a>Math.min</h3><p><code>Math.min</code>方法返回一组数值中最小的数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.min(<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>);<span class="comment">//1</span></div><div class="line"><span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>]);<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-pow"><a href="#Math-pow" class="headerlink" title="Math.pow"></a>Math.pow</h3><p><code>Math.pow</code>方法返回指定数值的指定次幂的数值。</p>
+<p><strong>参数一</strong><br>指定数值基数。</p>
+<p><strong>参数二</strong><br>指定次幂。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">2</span>);<span class="comment">//4</span></div><div class="line"><span class="built_in">Math</span>.pow(<span class="number">3</span>,<span class="number">2</span>);<span class="comment">//9</span></div><div class="line"><span class="built_in">Math</span>.pow(<span class="number">3</span>,<span class="number">3</span>);<span class="comment">//27</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random"></a>Math.random</h3><p><code>Math.random</code>方法返回一个大于等于0，小于1的随机数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//返回一个介于min与max之间的随机浮点数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomArbitrary</span>(<span class="params">min,max</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.random() * (max-min) + min;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//返回一个介于min与max之间的整数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomInt</span>(<span class="params">min,max</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>) + min);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round"></a>Math.round</h3><p><code>Math.round</code>方法返回一个四舍五入后的整数数值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.round(<span class="number">1.49</span>);<span class="comment">//1</span></div><div class="line"><span class="built_in">Math</span>.round(<span class="number">1.51</span>);<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<h3 id="Math-PI"><a href="#Math-PI" class="headerlink" title="Math.PI"></a>Math.PI</h3><p><code>Math.PI</code>属性返回圆周率。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaScript字符串.html" rel="next" title="JavaScript字符串">
+                <i class="fa fa-chevron-left"></i> JavaScript字符串
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="JavaScript数值.html"
+           data-title="JavaScript数值" data-url="http://yoursite.com/JavaScript数值.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="XiongQiang" />
+          <p class="site-author-name" itemprop="name">XiongQiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关属性"><span class="nav-number">1.</span> <span class="nav-text">相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-MAX-VALUE"><span class="nav-number">1.1.</span> <span class="nav-text">Number.MAX_VALUE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-MIN-VALUE"><span class="nav-number">1.2.</span> <span class="nav-text">Number.MIN_VALUE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">1.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例方法"><span class="nav-number">2.</span> <span class="nav-text">实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#toFixed"><span class="nav-number">2.1.</span> <span class="nav-text">toFixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.2.</span> <span class="nav-text">toString</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局方法"><span class="nav-number">3.</span> <span class="nav-text">全局方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isNaN"><span class="nav-number">3.1.</span> <span class="nav-text">isNaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseInt"><span class="nav-number">3.2.</span> <span class="nav-text">parseInt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseFloat"><span class="nav-number">3.3.</span> <span class="nav-text">parseFloat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math对象"><span class="nav-number">4.</span> <span class="nav-text">Math对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-abs"><span class="nav-number">4.1.</span> <span class="nav-text">Math.abs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-ceil"><span class="nav-number">4.2.</span> <span class="nav-text">Math.ceil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-floor"><span class="nav-number">4.3.</span> <span class="nav-text">Math.floor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-max"><span class="nav-number">4.4.</span> <span class="nav-text">Math.max</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-min"><span class="nav-number">4.5.</span> <span class="nav-text">Math.min</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-pow"><span class="nav-number">4.6.</span> <span class="nav-text">Math.pow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-random"><span class="nav-number">4.7.</span> <span class="nav-text">Math.random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-round"><span class="nav-number">4.8.</span> <span class="nav-text">Math.round</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-PI"><span class="nav-number">4.9.</span> <span class="nav-text">Math.PI</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiongQiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mangolime"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
