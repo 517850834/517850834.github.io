@@ -1,0 +1,657 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="属性lengthlength属性指明函数形参的个数。
+实例12function sayName(name,age)&amp;#123;&amp;#125;sayName.length;//2
+方法applyapply方法用来指定函数的this值，传入给函数的参数以数组的形式传入。
+参数一函数内部this值指向的对象。
+参数二以数组的形势传入的参数。
+实例12345678910111213var jack = &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript函数">
+<meta property="og:url" content="http://yoursite.com/JavaScript函数.html">
+<meta property="og:site_name" content="XQ's Note">
+<meta property="og:description" content="属性lengthlength属性指明函数形参的个数。
+实例12function sayName(name,age)&amp;#123;&amp;#125;sayName.length;//2
+方法applyapply方法用来指定函数的this值，传入给函数的参数以数组的形式传入。
+参数一函数内部this值指向的对象。
+参数二以数组的形势传入的参数。
+实例12345678910111213var jack = &amp;#">
+<meta property="og:updated_time" content="2016-07-09T14:59:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript函数">
+<meta name="twitter:description" content="属性lengthlength属性指明函数形参的个数。
+实例12function sayName(name,age)&amp;#123;&amp;#125;sayName.length;//2
+方法applyapply方法用来指定函数的this值，传入给函数的参数以数组的形式传入。
+参数一函数内部this值指向的对象。
+参数二以数组的形势传入的参数。
+实例12345678910111213var jack = &amp;#">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/JavaScript函数.html"/>
+
+  <title> JavaScript函数 | XQ's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">XQ's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-09T11:56:01+08:00" content="2016-07-09">
+              2016-07-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/JavaScript函数.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="JavaScript函数.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p><code>length</code>属性指明函数形参的个数。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params">name,age</span>)</span>&#123;&#125;</div><div class="line">sayName.length;<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p><code>apply</code>方法用来指定函数的this值，传入给函数的参数以数组的形式传入。</p>
+<p><strong>参数一</strong><br>函数内部this值指向的对象。</p>
+<p><strong>参数二</strong><br>以数组的形势传入的参数。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    age: <span class="number">20</span>,</div><div class="line">    sayHello: <span class="function"><span class="keyword">function</span>(<span class="params">greeting</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(greeting + <span class="string">' 你好，我是'</span> + <span class="keyword">this</span>.name + <span class="string">'，今年'</span> + <span class="keyword">this</span>.age + <span class="string">'岁。'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> mark = &#123;</div><div class="line">    name: <span class="string">'mark'</span>,</div><div class="line">    age: <span class="number">24</span></div><div class="line">&#125;</div><div class="line">jack.sayHello.apply(mark,[<span class="string">'hello'</span>]);</div></pre></td></tr></table></figure></p>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><p><code>call</code>方法用来指定函数的this值，传入给函数的参数以普通单个的形式传入。</p>
+<p><strong>参数一</strong><br>函数内部this值指向的对象。</p>
+<p><strong>参数二</strong><br>以普通形式传入的参数。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    age: <span class="number">20</span>,</div><div class="line">    sayHello: <span class="function"><span class="keyword">function</span>(<span class="params">greeting</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(greeting + <span class="string">' 你好，我是'</span> + <span class="keyword">this</span>.name + <span class="string">'，今年'</span> + <span class="keyword">this</span>.age + <span class="string">'岁。'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> mark = &#123;</div><div class="line">    name: <span class="string">'mark'</span>,</div><div class="line">    age: <span class="number">24</span></div><div class="line">&#125;</div><div class="line">jack.sayHello.call(mark,<span class="string">'hello'</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p><code>bind</code>方法与<code>call</code>方法基本上是一样的，只是返回一个函数来等到需要的时候再运行。</p>
+<p><strong>参数一</strong><br>返回函数内部的this值指向的对象。</p>
+<p><strong>参数二</strong><br>以普通形式传入的参数。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    age: <span class="number">20</span>,</div><div class="line">    sayHello: <span class="function"><span class="keyword">function</span>(<span class="params">greeting</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(greeting + <span class="string">' 你好，我是'</span> + <span class="keyword">this</span>.name + <span class="string">'，今年'</span> + <span class="keyword">this</span>.age + <span class="string">'岁。'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> mark = &#123;</div><div class="line">    name: <span class="string">'mark'</span>,</div><div class="line">    age: <span class="number">24</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sayHello = jack.sayHello.bind(mark,<span class="string">'hello'</span>);</div><div class="line">sayHello();</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>IE9以下不支持</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//IE9以下bind方法兼容写法</span></div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.bind = <span class="built_in">Function</span>.prototype.bind || <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> _self = <span class="keyword">this</span>;<span class="comment">//保存目标函数</span></div><div class="line">    <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>);<span class="comment">//保存第一次传入的参数</span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> _self.apply(obj,args.concat([].slice.call(<span class="built_in">arguments</span>)));</div><div class="line">        <span class="comment">//使用目标函数调用apply方法，将obj传入当做this值的指向对象</span></div><div class="line">        <span class="comment">//将第一次与第二次传入的参数合并成一个数组当做参数传入。</span></div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><p><code>arguments</code>对象是存在于函数内部的一个类数组对象，可以使用访问数组内部元素的方式来访问<code>arguments</code>对象中传入给函数的参数，但不会继承数组的方法。</p>
+<h3 id="arguments-length"><a href="#arguments-length" class="headerlink" title="arguments.length"></a>arguments.length</h3><p><code>arguments.length</code>属性值返回实际传入给函数的参数个数。</p>
+<h3 id="arguments-callee"><a href="#arguments-callee" class="headerlink" title="arguments.callee"></a>arguments.callee</h3><p><code>arguments.callee</code>属性返回的是函数自身。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>],<span class="built_in">arguments</span>[<span class="number">1</span>]);</div><div class="line">    <span class="built_in">console</span>.log([].slice.apply(<span class="built_in">arguments</span>));</div><div class="line">&#125;</div><div class="line">sayHello(<span class="string">'jack'</span>,<span class="number">20</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>函数可以当做构造函数来使用<code>new</code>操作符创建新的对象，构造函数的函数名称通用是使用大写，函数默认返回一个对象。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack;<span class="comment">//&#123;name:'jack',age: 20&#125;</span></div></pre></td></tr></table></figure></p>
+<h3 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h3><p>构造函数的<code>prototype</code>属性用来给构造函数所产生出来的所有对象提供一些通用的属性和方法。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">    address: <span class="string">'shanghai'</span>,</div><div class="line">    company: <span class="string">'xxx'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack.sayName();</div></pre></td></tr></table></figure></p>
+<h2 id="this值"><a href="#this值" class="headerlink" title="this值"></a>this值</h2><p><code>this</code>值是存在于函数内部的一个关键字，指向的是函数执行的上下文环境)。</p>
+<h3 id="作为对象的方法使用"><a href="#作为对象的方法使用" class="headerlink" title="作为对象的方法使用"></a>作为对象的方法使用</h3><p>函数在作为对象的方法被启动时，<code>this</code>值指向的就是那个对象。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">jack.sayName();<span class="comment">//通过jack这个对象启动的这个sayName函数，在函数内部this值就指jack这个对象。</span></div></pre></td></tr></table></figure></p>
+<h3 id="作为构造函数使用"><a href="#作为构造函数使用" class="headerlink" title="作为构造函数使用"></a>作为构造函数使用</h3><p>函数在作为构造函数启动时，<code>this</code>值指向的是构造函数返回的的对象。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;<span class="comment">//设置返回对象的name属性为传入进来的name参数</span></div><div class="line">    <span class="keyword">this</span>.age = age;<span class="comment">//设置返回对象的age属性为传入进来的age参数</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> People(<span class="string">'jack'</span>,<span class="number">20</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="使用apply-call-bind方法"><a href="#使用apply-call-bind方法" class="headerlink" title="使用apply/call/bind方法"></a>使用apply/call/bind方法</h3><p>在函数上使用<code>apply</code>、<code>call</code>、<code>bind</code>方法可以来指定函数内部的<code>this</code>值所指定的对象。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> mark = &#123;</div><div class="line">    name: <span class="string">'mark'</span></div><div class="line">&#125;</div><div class="line">jack.sayName.apply(mark);<span class="comment">//将函数sayName内部的this指向的对象改为mark对象。</span></div></pre></td></tr></table></figure></p>
+<h3 id="全局环境与函数中使用"><a href="#全局环境与函数中使用" class="headerlink" title="全局环境与函数中使用"></a>全局环境与函数中使用</h3><p>函数在全局环境中直接执行，内部的<code>this</code>指向的是<code>window</code>这个全局对象(在严格模式下会报错)。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span>;<span class="comment">//全局环境中定义一个jack变量</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line">sayName();</div></pre></td></tr></table></figure></p>
+<p>在函数中执行函数，这时被执行的函数的<code>this</code>值指向的也是<code>window</code>全局对象(严格模式下会报错)。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">'mark'</span>;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;)();</div><div class="line">&#125;</div><div class="line">sayName();<span class="comment">//'jack'</span></div></pre></td></tr></table></figure></p>
+<h3 id="作为DOM事件处理函数使用"><a href="#作为DOM事件处理函数使用" class="headerlink" title="作为DOM事件处理函数使用"></a>作为DOM事件处理函数使用</h3><p>函数被作为DOM事件处理函数来使用时，<code>this</code>值指向的是发生事件的DOM节点。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.dir(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>,foo);</div></pre></td></tr></table></figure></p>
+<h3 id="作为内联事件处理函数使用"><a href="#作为内联事件处理函数使用" class="headerlink" title="作为内联事件处理函数使用"></a>作为内联事件处理函数使用</h3><p>函数直接在HTML元素中作为内联事件处理函数来执行，<code>this</code>值指向的是函数所在的DOM节点。</p>
+<p><strong>实例</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"console.log(this.innerHTML)"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="函数递归"><a href="#函数递归" class="headerlink" title="函数递归"></a>函数递归</h2><p>函数递归就是在函数内部执行自身函数来达到循环的效果，需要有一个退出递归的条件。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//从一开始累加到指定数值</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">accumulation</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num === <span class="number">1</span>)&#123;<span class="comment">//当递归到的数值等于1时，就停止递归</span></div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> num + <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//假设num为3</span></div><div class="line"><span class="comment">//第一次执行 3 + arguments.callee(3 - 1)</span></div><div class="line"><span class="comment">//第二次执行 3 + 2 + arguments.callee(2 - 1)</span></div><div class="line"><span class="comment">//第三次执行 3 + 2 + 1</span></div><div class="line"><span class="comment">//最后返回递归结果6</span></div><div class="line"></div><div class="line"></div><div class="line">accumulation(<span class="number">100</span>);<span class="comment">//5050</span></div><div class="line"></div><div class="line"><span class="comment">//斐波那契数列</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt; <span class="number">3</span>)&#123;</div><div class="line">        <span class="keyword">return</span> num;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>) + <span class="built_in">arguments</span>.callee(num - <span class="number">2</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h2><p>函数柯里化是一个函数接受依次接受一些参数，但是不会立即返回结果，等到需要返回结果的时候再开始求值返回结果。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//求所有参数的和</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">plus</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = []; <span class="comment">//新建一个数组将每次输入的参数存储下来</span></div><div class="line">    arr.push(num);<span class="comment">//存储第一次执行函数时输入的参数</span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//返回一个新的函数</span></div><div class="line">        <span class="keyword">if</span>(<span class="built_in">arguments</span>.length &gt; <span class="number">0</span>)&#123;<span class="comment">//如果新的函数有参数输入，则将新的参数添加到数组中保存</span></div><div class="line">            arr.push(<span class="built_in">arguments</span>[<span class="number">0</span>]);</div><div class="line">            <span class="keyword">return</span> <span class="built_in">arguments</span>.callee;<span class="comment">//同时返回这个函数接受下一次参数</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur</span>)</span>&#123;<span class="comment">//如果新的函数执行时没有参数输入，则开始进行求值。</span></div><div class="line">            <span class="keyword">return</span> prev + cur;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">plus(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)();<span class="comment">//10</span></div><div class="line">plus(<span class="number">1</span>)();<span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaScript数组.html" rel="next" title="JavaScript数组">
+                <i class="fa fa-chevron-left"></i> JavaScript数组
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="JavaScript函数.html"
+           data-title="JavaScript函数" data-url="http://yoursite.com/JavaScript函数.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="XiongQiang" />
+          <p class="site-author-name" itemprop="name">XiongQiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#length"><span class="nav-number">1.1.</span> <span class="nav-text">length</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">2.1.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">2.2.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">2.3.</span> <span class="nav-text">bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments对象"><span class="nav-number">3.</span> <span class="nav-text">arguments对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments-length"><span class="nav-number">3.1.</span> <span class="nav-text">arguments.length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments-callee"><span class="nav-number">3.2.</span> <span class="nav-text">arguments.callee</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">4.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype属性"><span class="nav-number">4.1.</span> <span class="nav-text">prototype属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this值"><span class="nav-number">5.</span> <span class="nav-text">this值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作为对象的方法使用"><span class="nav-number">5.1.</span> <span class="nav-text">作为对象的方法使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为构造函数使用"><span class="nav-number">5.2.</span> <span class="nav-text">作为构造函数使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用apply-call-bind方法"><span class="nav-number">5.3.</span> <span class="nav-text">使用apply/call/bind方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局环境与函数中使用"><span class="nav-number">5.4.</span> <span class="nav-text">全局环境与函数中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为DOM事件处理函数使用"><span class="nav-number">5.5.</span> <span class="nav-text">作为DOM事件处理函数使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为内联事件处理函数使用"><span class="nav-number">5.6.</span> <span class="nav-text">作为内联事件处理函数使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数递归"><span class="nav-number">6.</span> <span class="nav-text">函数递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数柯里化"><span class="nav-number">7.</span> <span class="nav-text">函数柯里化</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiongQiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mangolime"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
