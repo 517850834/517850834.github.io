@@ -96,7 +96,7 @@ NaN表示这个数值不是一个数值">
 相关属性Number.MAX_VALUE返回JavaScript中能表示的最大值1.7976931348623157e+308。
 Number.MIN_VALUE返回JavaScript中能表示的最小值5e-324。
 NaN表示这个数值不是一个数值">
-<meta property="og:updated_time" content="2016-07-08T03:01:58.000Z">
+<meta property="og:updated_time" content="2016-07-10T14:02:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript数值">
 <meta name="twitter:description" content="在JavaScript中数值的构造函数是Number函数，最常用的方法是直接使用字面亮来生成一个数值，也可以使用Number函数生成一个数值包装对象。
@@ -315,8 +315,8 @@ NaN表示这个数值不是一个数值">
 <h2 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h2><h3 id="Number-MAX-VALUE"><a href="#Number-MAX-VALUE" class="headerlink" title="Number.MAX_VALUE"></a>Number.MAX_VALUE</h3><p>返回JavaScript中能表示的最大值1.7976931348623157e+308。</p>
 <h3 id="Number-MIN-VALUE"><a href="#Number-MIN-VALUE" class="headerlink" title="Number.MIN_VALUE"></a>Number.MIN_VALUE</h3><p>返回JavaScript中能表示的最小值5e-324。</p>
 <h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>表示这个数值不是一个数值，<code>NaN</code>与自身不相等。</p>
-<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed"></a>toFixed</h3><p><code>toFixed</code>方法通过四舍五入将数值的小数位保留到指定的位数。</p>
-<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100.456</span>;</div><div class="line">num.toFixed(<span class="number">1</span>);<span class="comment">//100.5</span></div><div class="line">num.toFixed(<span class="number">0</span>);<span class="comment">//100</span></div></pre></td></tr></table></figure></p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed"></a>toFixed</h3><p><code>toFixed</code>方法通过四舍五入将数值的小数位保留到指定的位数，然后返回该数值的字符串形式。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100.456</span>;</div><div class="line">num.toFixed(<span class="number">1</span>);<span class="comment">//'100.5'</span></div><div class="line">num.toFixed(<span class="number">0</span>);<span class="comment">//'100'</span></div></pre></td></tr></table></figure></p>
 <h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h3><p><code>toString</code>方法返回数值的字符串形式，如果不传入参数则默认以10进制转换为字符串。</p>
 <p><strong>参数</strong><br>转换成字符串的基数，例如二进制、八进制、16进制等。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</div><div class="line">num.toString();<span class="comment">//'100'</span></div><div class="line">num.toString(<span class="number">2</span>);<span class="comment">//'1100100'</span></div><div class="line">num.toString(<span class="number">8</span>);<span class="comment">//'144'</span></div><div class="line">num.toString(<span class="number">16</span>);<span class="comment">//'64'</span></div></pre></td></tr></table></figure></p>
@@ -453,7 +453,7 @@ NaN表示这个数值不是一个数值">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

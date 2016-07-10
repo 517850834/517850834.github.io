@@ -100,7 +100,7 @@
 参数一函数内部this值指向的对象。
 参数二以数组的形势传入的参数。
 实例12345678910111213var jack = &amp;#">
-<meta property="og:updated_time" content="2016-07-09T14:59:40.000Z">
+<meta property="og:updated_time" content="2016-07-09T15:03:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript函数">
 <meta name="twitter:description" content="属性lengthlength属性指明函数形参的个数。
@@ -343,7 +343,7 @@
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack;<span class="comment">//&#123;name:'jack',age: 20&#125;</span></div></pre></td></tr></table></figure></p>
 <h3 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h3><p>构造函数的<code>prototype</code>属性用来给构造函数所产生出来的所有对象提供一些通用的属性和方法。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">    address: <span class="string">'shanghai'</span>,</div><div class="line">    company: <span class="string">'xxx'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack.sayName();</div></pre></td></tr></table></figure></p>
-<h2 id="this值"><a href="#this值" class="headerlink" title="this值"></a>this值</h2><p><code>this</code>值是存在于函数内部的一个关键字，指向的是函数执行的上下文环境)。</p>
+<h2 id="this值"><a href="#this值" class="headerlink" title="this值"></a>this值</h2><p><code>this</code>值是存在于函数内部的一个关键字，指向的是函数执行的上下文环境。</p>
 <h3 id="作为对象的方法使用"><a href="#作为对象的方法使用" class="headerlink" title="作为对象的方法使用"></a>作为对象的方法使用</h3><p>函数在作为对象的方法被启动时，<code>this</code>值指向的就是那个对象。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">jack.sayName();<span class="comment">//通过jack这个对象启动的这个sayName函数，在函数内部this值就指jack这个对象。</span></div></pre></td></tr></table></figure></p>
 <h3 id="作为构造函数使用"><a href="#作为构造函数使用" class="headerlink" title="作为构造函数使用"></a>作为构造函数使用</h3><p>函数在作为构造函数启动时，<code>this</code>值指向的是构造函数返回的的对象。</p>
@@ -393,6 +393,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/作用域、闭包与变量提升.html" rel="prev" title="作用域、闭包与变量提升">
+                作用域、闭包与变量提升 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -464,7 +468,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

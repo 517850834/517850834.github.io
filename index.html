@@ -235,6 +235,135 @@
             
               
                 
+                <a class="post-title-link" href="/作用域、闭包与变量提升.html" itemprop="url">
+                  作用域、闭包与变量提升
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-10T16:37:54+08:00" content="2016-07-10">
+              2016-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/作用域、闭包与变量提升.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="作用域、闭包与变量提升.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域是指当前代码可以访问到的变量的一个环境，按照嵌套关系来讲，在外层的作用域中不能访问内部作用域中的变量，但内部作用域可以访问到外部作用域中的变量。</p>
+<p><strong>全局作用域</strong><br><code>window</code>对象是<code>javascript</code>中最外层的一个作用域，在任何地方都可以访问全局作用域中的变量。</p>
+<p><strong>函数作用域</strong><br>每一个函数在创建时(<strong>不是在调用时</strong>)可以产生一个内部作用域，在函数内部访问指定的变量时，如果函数内部不存在该变量，则会一层一层向上级作用域查找，一直到全局作用域。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = <span class="string">'我在顶层作用域'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> foo = <span class="string">'我在bar函数作用域'</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(foo);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> test = bar();<span class="comment">//执行bar函数返回一个新的函数，在新函数的内部打印foo这个变量</span></div><div class="line">test();<span class="comment">//'我在bar函数作用域' 证明了作用域是在函数创建时产生的，而不是在函数调用时才产生的作用域。</span></div></pre></td></tr></table></figure></p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包就时在函数中返回一个内部函数，在执行这个内部函数时可以通过作用域访问到函数中的变量。</p>
+<p><strong>保存局部变量</strong><br>函数中的局部变量在运行完后就会被销毁，可以使用闭包方法来保存函数内部的变量。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        count ++;</div><div class="line">        <span class="built_in">console</span>.log(count);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> bar = foo();</div><div class="line">bar();<span class="comment">//1</span></div><div class="line">bar();<span class="comment">//2</span></div><div class="line">bar();<span class="comment">//3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = list.length;i &lt; l;i++)&#123;</div><div class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="comment">//将每一次循环时i的值传入到一个闭包结构中保存起来，等实际发生点击事件的时候可以访问到当时保存的i的值。</span></div><div class="line">    		list[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        		<span class="built_in">console</span>.log(i);</div><div class="line">        &#125;);</div><div class="line">    &#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>封装私有变量</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">'jack'</span>;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> name;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;)();</div><div class="line">jack.getName();</div></pre></td></tr></table></figure></p>
+<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>变量提升是指在使用<code>var</code>关键字声明变量并赋值的过程会被解析为先使用<code>var</code>关键字在当前作用域的最前面声明这个变量，再等代码执行到赋值的语句时再进行赋值。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">'jack'</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(name);<span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="comment">//以上代码在执行时被解析为</span></div><div class="line"><span class="comment">//var name;</span></div><div class="line"><span class="comment">//if(false)&#123; name = 'jack'&#125;;</span></div><div class="line"><span class="comment">//console.log(name);</span></div><div class="line"><span class="comment">//所以此时name变量值为undefined</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/JavaScript函数.html" itemprop="url">
                   JavaScript函数
                 </a>
@@ -331,7 +460,7 @@
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack;<span class="comment">//&#123;name:'jack',age: 20&#125;</span></div></pre></td></tr></table></figure></p>
 <h3 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h3><p>构造函数的<code>prototype</code>属性用来给构造函数所产生出来的所有对象提供一些通用的属性和方法。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">    address: <span class="string">'shanghai'</span>,</div><div class="line">    company: <span class="string">'xxx'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> jack = <span class="keyword">new</span> Person(<span class="string">'jack'</span>,<span class="number">20</span>);</div><div class="line">jack.sayName();</div></pre></td></tr></table></figure></p>
-<h2 id="this值"><a href="#this值" class="headerlink" title="this值"></a>this值</h2><p><code>this</code>值是存在于函数内部的一个关键字，指向的是函数执行的上下文环境)。</p>
+<h2 id="this值"><a href="#this值" class="headerlink" title="this值"></a>this值</h2><p><code>this</code>值是存在于函数内部的一个关键字，指向的是函数执行的上下文环境。</p>
 <h3 id="作为对象的方法使用"><a href="#作为对象的方法使用" class="headerlink" title="作为对象的方法使用"></a>作为对象的方法使用</h3><p>函数在作为对象的方法被启动时，<code>this</code>值指向的就是那个对象。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jack = &#123;</div><div class="line">    name: <span class="string">'jack'</span>,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">jack.sayName();<span class="comment">//通过jack这个对象启动的这个sayName函数，在函数内部this值就指jack这个对象。</span></div></pre></td></tr></table></figure></p>
 <h3 id="作为构造函数使用"><a href="#作为构造函数使用" class="headerlink" title="作为构造函数使用"></a>作为构造函数使用</h3><p>函数在作为构造函数启动时，<code>this</code>值指向的是构造函数返回的的对象。</p>
@@ -664,8 +793,8 @@
 <h2 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h2><h3 id="Number-MAX-VALUE"><a href="#Number-MAX-VALUE" class="headerlink" title="Number.MAX_VALUE"></a>Number.MAX_VALUE</h3><p>返回JavaScript中能表示的最大值1.7976931348623157e+308。</p>
 <h3 id="Number-MIN-VALUE"><a href="#Number-MIN-VALUE" class="headerlink" title="Number.MIN_VALUE"></a>Number.MIN_VALUE</h3><p>返回JavaScript中能表示的最小值5e-324。</p>
 <h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>表示这个数值不是一个数值，<code>NaN</code>与自身不相等。</p>
-<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed"></a>toFixed</h3><p><code>toFixed</code>方法通过四舍五入将数值的小数位保留到指定的位数。</p>
-<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100.456</span>;</div><div class="line">num.toFixed(<span class="number">1</span>);<span class="comment">//100.5</span></div><div class="line">num.toFixed(<span class="number">0</span>);<span class="comment">//100</span></div></pre></td></tr></table></figure></p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="toFixed"><a href="#toFixed" class="headerlink" title="toFixed"></a>toFixed</h3><p><code>toFixed</code>方法通过四舍五入将数值的小数位保留到指定的位数，然后返回该数值的字符串形式。</p>
+<p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100.456</span>;</div><div class="line">num.toFixed(<span class="number">1</span>);<span class="comment">//'100.5'</span></div><div class="line">num.toFixed(<span class="number">0</span>);<span class="comment">//'100'</span></div></pre></td></tr></table></figure></p>
 <h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h3><p><code>toString</code>方法返回数值的字符串形式，如果不传入参数则默认以10进制转换为字符串。</p>
 <p><strong>参数</strong><br>转换成字符串的基数，例如二进制、八进制、16进制等。</p>
 <p><strong>实例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</div><div class="line">num.toString();<span class="comment">//'100'</span></div><div class="line">num.toString(<span class="number">2</span>);<span class="comment">//'1100100'</span></div><div class="line">num.toString(<span class="number">8</span>);<span class="comment">//'144'</span></div><div class="line">num.toString(<span class="number">16</span>);<span class="comment">//'64'</span></div></pre></td></tr></table></figure></p>
@@ -1200,7 +1329,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
